@@ -17,7 +17,7 @@ public class Leitor {
 
 		try {
 
-           leitor = new BufferedReader(new FileReader(arquivo));		
+        	leitor = new BufferedReader(new FileReader(arquivo));		
 
 			String linha = leitor.readLine();
 
@@ -30,9 +30,9 @@ public class Leitor {
 
 		catch(IOException e) { e.printStackTrace(); } 
 
-        finally { 
+    	finally { 
 			
-			try { if (leitor != null) leitor.close(); }
+		    try { if (leitor != null) leitor.close(); }
 			catch(IOException e) { e.printStackTrace(); }
 			
 		}
