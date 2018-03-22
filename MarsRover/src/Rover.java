@@ -4,17 +4,26 @@ import java.util.ArrayList;
 public class Rover {
 	
 	private int direcao;
-	private List<String> instrucoes;
+	private String instrucoes;
 	private int[] posicao;
 
-	public Rover(int direcao, List<String> instrucoes, int x, int y) {
+	public Rover(int direcao, String instrucoes, int x, int y) {
 		this.direcao = direcao;
-		this.instrucoes = new ArrayList<String>(instrucoes);
+		this.instrucoes = instrucoes;
 		this.posicao = new int[] {x, y};
 	}
 
-	public int getDirecao() {
-		return this.direcao;
+	public String getDirecao() {
+		switch(this.direcao) {
+
+			case 0: return "N";
+			case 1: return "E";
+			case 2: return "S";
+			case 3: return "W";
+
+		}
+		
+		return "";
 	}
 
 	private void updateDirecao(int direcao) {
@@ -52,13 +61,13 @@ public class Rover {
 	
 	public void executar() {
 
-		for(String instrucao : instrucoes) {
+		for(int i = 0; i < this.instrucoes.length(); i++) {
 
-			switch(instrucao) {
+			switch(this.instrucoes.charAt(i)) {
 
-				case "M": andar(); break;
-				case "L": updateDirecao(-1); break;
-				case "R": updateDirecao(1); break;
+				case 'M': andar(); break;
+				case 'L': updateDirecao(-1); break;
+				case 'R': updateDirecao(1); break;
 
 			}
 
