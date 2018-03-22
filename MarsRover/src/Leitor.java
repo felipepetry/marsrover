@@ -22,7 +22,7 @@ public class Leitor {
 			String linha = leitor.readLine();
 
 			while (linha != null) {
-				retorno.add(linha);
+				if(!(linha.equals(""))) retorno.add(linha);
 				linha = leitor.readLine();
 			}
 
