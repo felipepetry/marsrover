@@ -1,12 +1,15 @@
+import java.util.List;
+import java.util.ArrayList;
 
 public class App {
 
-	public App() {
-		// TODO Auto-generated constructor stub
-	}
-
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
+		Leitor a = new Leitor();
+
+		List<String> b = a.le("oi.txt");
+
+		for(String c : b) System.out.print(c);
 
 	}
 
